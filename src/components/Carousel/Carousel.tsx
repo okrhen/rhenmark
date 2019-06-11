@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ReactElement } from "react";
 import styled from "styled-components";
 import { useTransition, animated, config } from "react-spring";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const CarouselContainer = styled.div`
   width: 100%;
@@ -15,6 +16,7 @@ const CarouselContainer = styled.div`
     background-size: cover;
     background-position: center;
     will-change: opacity;
+    /* z-index: -1; */
   }
 `;
 
@@ -49,10 +51,16 @@ const Carousel: React.SFC<Props> = ({ children, slides }) => {
           key={key}
           className="bg"
           style={{
-            ...props,
-            backgroundImage: `url(${item.url})`
+            ...props
+            // backgroundImage: `url(${item.url})`
           }}
         >
+          {/* {children} */}
+          <LazyLoadImage
+            className="bg"
+            effect="blur"
+            src={item.url} // use normal <img> attributes as props
+          />
           {children}
         </animated.div>
       ))}

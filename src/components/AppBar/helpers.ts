@@ -8,6 +8,14 @@ const navList = [
     link: "/projects"
   },
   {
+    label: "Blogs",
+    link: "/blogs"
+  },
+  {
+    label: "Store",
+    link: "/store"
+  },
+  {
     label: "About",
     link: "/about"
   },
@@ -16,4 +24,7 @@ const navList = [
     link: "/contact"
   }
 ];
+
+export default navList;
+
 export { navList };

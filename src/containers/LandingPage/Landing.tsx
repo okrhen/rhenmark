@@ -78,25 +78,24 @@ const Landing: React.SFC<Props> = () => {
 
   return (
     <LandingContainer>
-      <Carousel slides={slides}>
-        <div className="typistDiv">
-          <Typist
-            cursor={{
-              show: true,
-              blink: true
-            }}
-          >
-            <span className="text">
-              {`${t.welcome} ${t.iAm}`} <span>{t.name}</span>
-            </span>
-            <Typist.Backspace
-              count={getCount(`${t.name}${t.iAm}${t.name}`)}
-              delay={8000}
-            />
-            <span className="txtDescription"> {t.profession} </span>
-          </Typist>
-        </div>
-      </Carousel>
+      <Carousel slides={slides} />
+      <div className="typistDiv">
+        <Typist
+          cursor={{
+            show: true,
+            blink: true
+          }}
+        >
+          <span className="text">
+            {`${t.welcome} ${t.iAm}`} <span>{t.name}</span>
+          </span>
+          <Typist.Backspace
+            count={getCount(`${t.name}${t.iAm}${t.name}`)}
+            delay={8000}
+          />
+          <span className="txtDescription"> {t.profession} </span>
+        </Typist>
+      </div>
     </LandingContainer>
   );
 };
