@@ -1,60 +1,241 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
+import Icon from "../../components/Icon";
 
-import {
-  Container,
-  FirstContent,
-  IconDiv,
-  ProjectContent
-} from "./styles/Home.styles";
-import { Button, Icon } from "../../components";
-
-import { linksList } from "./helpers";
-
-type LinkListProps = {
-  name: string;
-  icon: string;
-  link: string;
-};
+import cartrack from "../../assets/images/cartrack.jpg";
 
 type Props = {
   path?: string;
+  children?: any;
   default?: boolean;
 };
 
-const Home: React.SFC<Props> = () => (
-  <Container>
-    <FirstContent>
-      <div className="left-content">
-        <div className="left-content-info">
-          <span>Hi, I'm </span>
-          <span className="name">Rhen Mark</span>
-          <span>Frontend / Hybrid App Developer</span>
-          <IconDiv>
-            {linksList.map((item: LinkListProps) => (
-              <span className="link" key={item.name}>
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  <Icon name={item.icon} prefix="fab" />
-                </a>
+const Home: React.SFC<Props> = () => {
+  const [activeTab, setActiveTab] = useState("web");
+
+  return (
+    <div className="Container">
+      <div className="Header">
+        <div className="Header-logo">
+          <span>RHEN MARK</span>
+        </div>
+        <div className="Header-nav">
+          <ul>
+            <li className="isActive">Home</li>
+            <li>Projects</li>
+            <li>About Me</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+      <div className="Home">
+        <div className="Home-left">
+          {/* <img src={rhenImage} alt="RhenMark" /> */}
+        </div>
+        <div className="Home-right">
+          <div className="Home-right-info">
+            <div className="Home-right-info-label">
+              <span>Hi, I am</span>
+              <br />
+              <span className="Home-right-info-label-name">RHEN MARK</span>
+              <br />
+              <span className="Home-right-info-label-position">
+                [ Frontend/App Developer]
               </span>
-            ))}
-          </IconDiv>
-          <div className="buttonDiv">
-            <Button label="Hire Me" />
-            <Button label="View my Resume" />
+            </div>
+          </div>
+          <div className="Home-right-social">
+            <ul>
+              <li>
+                <Icon name="github" prefix="fab" />
+              </li>
+              <li>
+                <Icon name="linkedin" prefix="fab" />
+              </li>
+              <li>
+                <Icon name="google-plus" prefix="fab" />
+              </li>
+              <li>
+                <Icon name="instagram" prefix="fab" />
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div>Right</div>
-    </FirstContent>
-    <ProjectContent>
-      <span className="content-title">Projects</span>
-      <div className="project-content">
-        {[1, 2, 3].map((item: number) => (
-          <div key={item} className="card" />
-        ))}
+      <div className="Project">
+        <div className="Project-header">
+          <span>Projects</span>
+        </div>
+        <div className="Project-content">
+          <div className="Project-content-tab">
+            <ul>
+              <li
+                className={activeTab === "web" ? "isActive" : ""}
+                onClick={() => setActiveTab("web")}
+              >
+                Web Apps
+              </li>
+              <li
+                className={activeTab === "mobile" ? "isActive" : ""}
+                onClick={() => setActiveTab("mobile")}
+              >
+                Mobile Apps
+              </li>
+            </ul>
+          </div>
+          <div className="Project-content-items">
+            {activeTab === "web" ? (
+              <Fragment>
+                <div className="Project-content-items-card">
+                  <img src={cartrack} alt="Cartrack Fleet Management" />
+                  <div className="Card-overlap">
+                    <span className="Card-overlap-name">
+                      Cartrack Fleet Management
+                    </span>
+                    <button>
+                      <span>See details</span>
+                      <Icon name="chevron-right" />
+                    </button>
+                  </div>
+                </div>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="Project-content-items-card isSoon">
+                  <div className="Card-overlap">
+                    <button>
+                      <span>Soon</span>
+                    </button>
+                  </div>
+                </div>
+              </Fragment>
+            )}
+          </div>
+        </div>
       </div>
-    </ProjectContent>
-  </Container>
-);
+      <div className="About">
+        <div className="About-header">
+          <span>About Me</span>
+        </div>
+        <div className="About-content">
+          <div className="About-content-left">
+            <ul>
+              <li>
+                <span className="text-bold">Educational Attaintment</span>
+                <ul>
+                  <li>
+                    <span className="label-info">
+                      Bachelors of Science in Information Systems (2012 - 2016)
+                    </span>
+                    <br />
+                    <span>Carlos Hilado Memorial State College</span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span className="text-bold">Work Experiences</span>
+                <ul>
+                  <li>
+                    <span className="label-info">
+                      {" "}
+                      Web Developer (Aug 2018 - present){" "}
+                    </span>
+                    <br />
+                    <span>
+                      Cartrack Technologies SouthEast Asia Pte Ltd ( Singapore )
+                    </span>
+                  </li>
+                  <li>
+                    <span className="label-info">
+                      Web Developer Supervisor (January 2018 - Aug 2018)
+                    </span>
+                    <br />
+                    <span>The Asia Thai Co. Ltd. - ( Thailand )</span>
+                  </li>
+                  <li>
+                    <span className="label-info">
+                      {" "}
+                      Software Engineer (January 2016 - January 2018){" "}
+                    </span>
+                    <br />
+                    <span>
+                      Stratium Software Group Inc. - ( Bacolod, Philippines )
+                    </span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div className="About-content-right" />
+        </div>
+      </div>
+      <div className="Contact">
+        <div className="Contact-header">
+          <span>How to Contact me?</span>
+        </div>
+        <div className="Contact-content">
+          <ul>
+            <li>
+              <Icon name="envelope" size="2x" color="#D44638"/>
+              <span>rhenmark.callado@gmail.com</span>
+            </li>
+            <li>
+              <Icon name="skype" size="3x" prefix="fab" color="#00aff0"/>
+              <span>rhenmark9</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Home;

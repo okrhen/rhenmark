@@ -8,16 +8,24 @@ import {
 
 type IconProps = {
   name: string;
-  prefix?: string;
+  prefix?: string; // fas | fab
   size?: string | undefined;
   className?: string | undefined;
+  color?: string | undefined;
 };
 
-const Icon: React.SFC<IconProps> = ({ name, prefix, size, className }) => (
+const Icon: React.SFC<IconProps> = ({
+  name,
+  prefix,
+  size,
+  className,
+  color
+}) => (
   <FontAwesomeIcon
     icon={[prefix as IconPrefix, name as IconName]}
     size={size as SizeProp}
     className={className}
+    color={color}
   />
 );
 

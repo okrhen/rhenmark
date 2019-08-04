@@ -17,6 +17,12 @@ import { faListAlt } from "@fortawesome/free-solid-svg-icons/faListAlt";
 import { faTachometerAlt } from "@fortawesome/free-solid-svg-icons/faTachometerAlt";
 import { faChartLine } from "@fortawesome/free-solid-svg-icons/faChartLine";
 import { faTasks } from "@fortawesome/free-solid-svg-icons/faTasks";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
+import { faGooglePlus } from "@fortawesome/free-brands-svg-icons/faGooglePlus";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
+import { faSkype } from "@fortawesome/free-brands-svg-icons/faSkype";
 
 library.add(
   fab,
@@ -36,5 +42,11 @@ library.add(
   faListAlt,
   faTachometerAlt,
   faChartLine,
-  faTasks
+  faTasks,
+  faGithub,
+  faLinkedin,
+  faGooglePlus,
+  faInstagram,
+  faEnvelope,
+  faSkype
 );
