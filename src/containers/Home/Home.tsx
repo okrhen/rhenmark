@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import Icon from "../../components/Icon";
 
 import cartrack from "../../assets/images/cartrack.jpg";
+import teacherNatty from "../../assets/images/teacher-natty.png";
 
 type Props = {
   path?: string;
@@ -46,16 +47,27 @@ const Home: React.SFC<Props> = () => {
           <div className="Home-right-social">
             <ul>
               <li>
-                <Icon name="github" prefix="fab" />
+                <a href="https://github.com/rhenmarkcallado" target="_blank">
+                  <Icon name="github" prefix="fab" />
+                </a>
               </li>
               <li>
-                <Icon name="linkedin" prefix="fab" />
+                <a
+                  href="https://www.linkedin.com/in/rhenmarkcallado/"
+                  target="_blank"
+                >
+                  <Icon name="linkedin" prefix="fab" />
+                </a>
               </li>
               <li>
-                <Icon name="google-plus" prefix="fab" />
+                <a href="mailto:rhenmarkc@gmail.com">
+                  <Icon name="google-plus" prefix="fab" />
+                </a>
               </li>
               <li>
-                <Icon name="instagram" prefix="fab" />
+                <a href="https://www.instagram.com/rhen__mark/" target="_blank">
+                  <Icon name="instagram" prefix="fab" />
+                </a>
               </li>
             </ul>
           </div>
@@ -87,20 +99,25 @@ const Home: React.SFC<Props> = () => {
               <Fragment>
                 <div className="Project-content-items-card">
                   <img src={cartrack} alt="Cartrack Fleet Management" />
+                  <div className="Project-content-items-card-title">
+                    <span>Cartrack Fleet Management App </span>
+                  </div>
                   <div className="Card-overlap">
-                    <span className="Card-overlap-name">
-                      Cartrack Fleet Management
-                    </span>
                     <button>
                       <span>See details</span>
                       <Icon name="chevron-right" />
                     </button>
                   </div>
                 </div>
-                <div className="Project-content-items-card isSoon">
+                <div className="Project-content-items-card">
+                  <img src={teacherNatty} alt="Teacher Natty" />
+                  <div className="Project-content-items-card-title">
+                    <span>Teacher Natty </span>
+                  </div>
                   <div className="Card-overlap">
                     <button>
-                      <span>Soon</span>
+                      <span>See details</span>
+                      <Icon name="chevron-right" />
                     </button>
                   </div>
                 </div>
@@ -224,11 +241,11 @@ const Home: React.SFC<Props> = () => {
         <div className="Contact-content">
           <ul>
             <li>
-              <Icon name="envelope" size="2x" color="#D44638"/>
+              <Icon name="envelope" size="2x" color="#D44638" />
               <span>rhenmark.callado@gmail.com</span>
             </li>
             <li>
-              <Icon name="skype" size="3x" prefix="fab" color="#00aff0"/>
+              <Icon name="skype" size="3x" prefix="fab" color="#00aff0" />
               <span>rhenmark9</span>
             </li>
           </ul>
