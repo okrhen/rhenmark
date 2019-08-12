@@ -4,6 +4,34 @@ import Icon from "../../components/Icon";
 import cartrack from "../../assets/images/cartrack.jpg";
 import teacherNatty from "../../assets/images/teacher-natty.png";
 
+const list = [
+  "ReactJS",
+  "React Native",
+  "GraphQL",
+  "Redux",
+  "Apollo",
+  "Javascript ( ES6 )",
+  "Phonegap",
+  "Cordova",
+  "LESS",
+  "SASS",
+  "Styled-components",
+  "Next.js",
+  "NodeJS",
+  "Google Maps API",
+  "OpenstreetMap",
+  "Firebase",
+  "PostgreSQL",
+  "MongoDB",
+  "MySQL",
+  "Git",
+  "Github",
+  "JIRA",
+  "Kanban",
+  "Agile",
+  "Adobe XD"
+];
+
 type Props = {
   path?: string;
   children?: any;
@@ -47,7 +75,11 @@ const Home: React.SFC<Props> = () => {
           <div className="Home-right-social">
             <ul>
               <li>
-                <a href="https://github.com/rhenmarkcallado" target="_blank">
+                <a
+                  href="https://github.com/rhenmarkcallado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Icon name="github" prefix="fab" />
                 </a>
               </li>
@@ -55,6 +87,7 @@ const Home: React.SFC<Props> = () => {
                 <a
                   href="https://www.linkedin.com/in/rhenmarkcallado/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon name="linkedin" prefix="fab" />
                 </a>
@@ -65,7 +98,11 @@ const Home: React.SFC<Props> = () => {
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/rhen__mark/" target="_blank">
+                <a
+                  href="https://www.instagram.com/rhen__mark/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Icon name="instagram" prefix="fab" />
                 </a>
               </li>
@@ -184,54 +221,42 @@ const Home: React.SFC<Props> = () => {
         </div>
         <div className="About-content">
           <div className="About-content-left">
-            <ul>
-              <li>
-                <span className="text-bold">Educational Attaintment</span>
-                <ul>
-                  <li>
-                    <span className="label-info">
-                      Bachelors of Science in Information Systems (2012 - 2016)
-                    </span>
-                    <br />
-                    <span>Carlos Hilado Memorial State College</span>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <span className="text-bold">Work Experiences</span>
-                <ul>
-                  <li>
-                    <span className="label-info">
-                      {" "}
-                      Web Developer (Aug 2018 - present){" "}
-                    </span>
-                    <br />
-                    <span>
-                      Cartrack Technologies SouthEast Asia Pte Ltd ( Singapore )
-                    </span>
-                  </li>
-                  <li>
-                    <span className="label-info">
-                      Web Developer Supervisor (January 2018 - Aug 2018)
-                    </span>
-                    <br />
-                    <span>The Asia Thai Co. Ltd. - ( Thailand )</span>
-                  </li>
-                  <li>
-                    <span className="label-info">
-                      {" "}
-                      Software Engineer (January 2016 - January 2018){" "}
-                    </span>
-                    <br />
-                    <span>
-                      Stratium Software Group Inc. - ( Bacolod, Philippines )
-                    </span>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <div className="About-content-title">
+              <span className="text-bold">Work Experiences</span>
+            </div>
+            <div className="Experience">
+              <span className="label-info">Web Developer</span>
+              <span>Cartrack Technologies SouthEast Asia Pte Ltd</span>
+              <span>August 2018 - Present</span>
+              <span>
+                <Icon name="map-marker-alt" /> Singapore
+              </span>
+            </div>
+            <div className="Experience">
+              <span className="label-info">Web Developer Supervisor</span>
+              <span>The Asia Thai Co. Ltd.</span>
+              <span>January 2018 - August 2018</span>
+              <span>
+                <Icon name="map-marker-alt" /> Thailand
+              </span>
+            </div>
+            <div className="Experience">
+              <span className="label-info">Software Engineer</span>
+              <span>Stratium Software Group Inc.</span>
+              <span>January 2016 - January 2018</span>
+              <span>
+                <Icon name="map-marker-alt" /> Philippines
+              </span>
+            </div>
           </div>
-          <div className="About-content-right" />
+          <div className="About-content-right">
+            <div className="About-content-title">My Skills</div>
+            <div className="About-content-right-skills">
+              {list.map(item => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="Contact">
@@ -242,7 +267,7 @@ const Home: React.SFC<Props> = () => {
           <ul>
             <li>
               <Icon name="envelope" size="2x" color="#D44638" />
-              <span>rhenmark.callado@gmail.com</span>
+              <span>rhenmarkc@gmail.com</span>
             </li>
             <li>
               <Icon name="skype" size="3x" prefix="fab" color="#00aff0" />
