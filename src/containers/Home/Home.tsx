@@ -26,10 +26,13 @@ const list = [
   "MySQL",
   "Git",
   "Github",
+  "Jenkins",
+  "Team City",
   "JIRA",
   "Kanban",
   "Agile",
-  "Adobe XD"
+  "Adobe XD",
+  "Photoshop"
 ];
 
 type Props = {
@@ -250,7 +253,7 @@ const Home: React.SFC<Props> = () => {
             </div>
           </div>
           <div className="About-content-right">
-            <div className="About-content-title">My Skills</div>
+            <div className="About-content-title">What skills I have?</div>
             <div className="About-content-right-skills">
               {list.map(item => (
                 <span key={item}>{item}</span>
