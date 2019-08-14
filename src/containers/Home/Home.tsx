@@ -5,6 +5,9 @@ import Icon from "../../components/Icon";
 
 import cartrack from "../../assets/images/cartrack.jpg";
 import teacherNatty from "../../assets/images/teacher-natty.png";
+import gawangLokal from "../../assets/images/gawanglokal.jpg";
+import gawangLokalApp from "../../assets/images/gawang-lokal-app.jpg";
+import chmscApp from "../../assets/images/chmsc-app.jpg";
 
 const list = [
   "ReactJS",
@@ -173,19 +176,22 @@ const Home: React.SFC<Props> = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="Project-content-items-card">
+                  <div className="Project-content-items-card isSoon">
                     <img src={teacherNatty} alt="Teacher Natty" />
                     <div className="Project-content-items-card-title">
                       <span>Teacher Natty </span>
                     </div>
                     <div className="Card-overlap">
                       <button>
-                        <span>See details</span>
-                        <Icon name="chevron-right" />
+                        <span>Soon</span>
                       </button>
                     </div>
                   </div>
                   <div className="Project-content-items-card isSoon">
+                    <img src={gawangLokal} alt="Gawang Lokal" />
+                    <div className="Project-content-items-card-title">
+                      <span>Gawang Lokal (E-commerce)</span>
+                    </div>
                     <div className="Card-overlap">
                       <button>
                         <span>Soon</span>
@@ -216,21 +222,22 @@ const Home: React.SFC<Props> = () => {
                 </Fragment>
               ) : (
                 <Fragment>
-                  <div className="Project-content-items-card isSoon">
+                  <div className="Project-content-items-card isMobile">
+                    <img src={gawangLokalApp} alt="Gawang Lokal App" />
+                    <div className="Project-content-items-card-title">
+                      <span>Gawang Lokal ( Mobile App )</span>
+                    </div>
                     <div className="Card-overlap">
                       <button>
                         <span>Soon</span>
                       </button>
                     </div>
                   </div>
-                  <div className="Project-content-items-card isSoon">
-                    <div className="Card-overlap">
-                      <button>
-                        <span>Soon</span>
-                      </button>
+                  <div className="Project-content-items-card isMobile">
+                    <img src={chmscApp} alt="Chmsc App" />
+                    <div className="Project-content-items-card-title">
+                      <span>CHMSC APP</span>
                     </div>
-                  </div>
-                  <div className="Project-content-items-card isSoon">
                     <div className="Card-overlap">
                       <button>
                         <span>Soon</span>
