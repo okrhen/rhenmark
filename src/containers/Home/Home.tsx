@@ -8,6 +8,10 @@ import teacherNatty from "../../assets/images/teacher-natty.png";
 import gawangLokal from "../../assets/images/gawanglokal.jpg";
 import gawangLokalApp from "../../assets/images/gawang-lokal-app.jpg";
 import chmscApp from "../../assets/images/chmsc-app.jpg";
+import qrCode from "../../assets/images/resume.png";
+
+// Resume short code
+// https://qrgo.page.link/Dv7AP
 
 const list = [
   "ReactJS",
@@ -23,6 +27,8 @@ const list = [
   "Styled-components",
   "Next.js",
   "NodeJS",
+  "FeathersJS",
+  "ExpressJS",
   "Google Maps API",
   "OpenstreetMap",
   "Firebase",
@@ -86,7 +92,10 @@ const Home: React.SFC<Props> = () => {
       <Element name="home">
         <div className="Home" id="home">
           <div className="Home-left">
-            {/* <img src={rhenImage} alt="RhenMark" /> */}
+            <img src={qrCode} alt="RhenMark" />
+            <div>
+              <span>Scan to check my CV</span>
+            </div>
           </div>
           <div className="Home-right">
             <div className="Home-right-info">

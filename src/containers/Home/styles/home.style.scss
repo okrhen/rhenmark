@@ -59,9 +59,17 @@
       display: grid;
       align-items: center;
       background-color: #da9855;
+      justify-content: center;
+      grid-template-rows: 80% 20%;
 
       > img {
         width: 100%;
+      }
+
+      > div {
+        font-size: 30px;
+        text-align: center;
+        color: #fff;
       }
     }
 
