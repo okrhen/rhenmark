@@ -23,6 +23,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import { faGooglePlus } from "@fortawesome/free-brands-svg-icons/faGooglePlus";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
 import { faSkype } from "@fortawesome/free-brands-svg-icons/faSkype";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 
 library.add(
   fab,
@@ -48,5 +49,6 @@ library.add(
   faGooglePlus,
   faInstagram,
   faEnvelope,
-  faSkype
+  faSkype,
+  faBars
 );

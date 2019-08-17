@@ -62,29 +62,43 @@ type Props = {
 const Home: React.SFC<Props> = () => {
   const [activeTab, setActiveTab] = useState("web");
   const [activeNav, setActiveNav] = useState("home");
+  const [isNavOpen, setOpenNav] = useState(false)
 
   const linkConfig = {
     smooth: true,
     spy: true
   };
 
+
   return (
-    <div className="Container">
+    <main className="Container">
+      {
+        isNavOpen && (
+          <div className="Container-cover" onClick={() => setOpenNav(!isNavOpen)} />)
+      }
       <div className="Header">
-        <div className="Header-logo">
+        <div className="Header-logo"> 
+          <button className="Header-logo-btn" title="nav-hamburger" onClick={() => setOpenNav(true)}>
+            <Icon name="bars"  className="Header-logo-btn-icon"/>
+          </button>
           <span>RHEN MARK</span>
         </div>
-        <div className="Header-nav">
+        <div className={`Header-nav ${isNavOpen ? 'isNavOpen' : ''}`}>
+          <div className="Header-nav-close">
+            <button title="nav-close" onClick={() => setOpenNav(!isNavOpen)}>
+              <Icon name="times" />
+            </button>
+          </div>
           <ul>
             {navs.map(item => (
-              <Link to={item.target} key={item.target} {...linkConfig}>
                 <li
                   className={activeNav === item.target ? "isActive" : ""}
-                  onClick={() => setActiveNav(item.target)}
+                  key={item.target} 
                 >
-                  {item.name}
+                    <Link to={item.target} {...linkConfig} onSetActive={() => setActiveNav(item.target)}>
+                    {item.name}
+                    </Link>
                 </li>
-              </Link>
             ))}
           </ul>
         </div>
@@ -105,7 +119,7 @@ const Home: React.SFC<Props> = () => {
                 <span className="Home-right-info-label-name">RHEN MARK</span>
                 <br />
                 <span className="Home-right-info-label-position">
-                  [ Frontend/App Developer]
+                  [ Frontend/App Developer ]
                 </span>
               </div>
             </div>
@@ -116,6 +130,7 @@ const Home: React.SFC<Props> = () => {
                     href="https://github.com/rhenmarkcallado"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Open github"
                   >
                     <Icon name="github" prefix="fab" />
                   </a>
@@ -125,12 +140,13 @@ const Home: React.SFC<Props> = () => {
                     href="https://www.linkedin.com/in/rhenmarkcallado/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Open Linkedin"
                   >
                     <Icon name="linkedin" prefix="fab" />
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:rhenmarkc@gmail.com">
+                  <a href="mailto:rhenmarkc@gmail.com" aria-label="Send email to rhenmarkc@gmail.com">
                     <Icon name="google-plus" prefix="fab" />
                   </a>
                 </li>
@@ -139,6 +155,7 @@ const Home: React.SFC<Props> = () => {
                     href="https://www.instagram.com/rhen__mark/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Open instagram"
                   >
                     <Icon name="instagram" prefix="fab" />
                   </a>
@@ -179,7 +196,7 @@ const Home: React.SFC<Props> = () => {
                       <span>Cartrack Fleet Management App </span>
                     </div>
                     <div className="Card-overlap">
-                      <button>
+                      <button title="card-hover-btn">
                         <span>See details</span>
                         <Icon name="chevron-right" />
                       </button>
@@ -324,7 +341,7 @@ const Home: React.SFC<Props> = () => {
           </div>
         </div>
       </Element>
-    </div>
+    </main>
   );
 };
 
