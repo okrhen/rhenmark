@@ -1,6 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { Link, Element } from "react-scroll";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
+import ContactForm from './components/Form'
 import Icon from "../../components/Icon";
 
 import cartrack from "../../assets/images/cartrack.jpg";
@@ -106,7 +109,7 @@ const Home: React.SFC<Props> = () => {
       <Element name="home">
         <div className="Home" id="home">
           <div className="Home-left">
-            <img src={qrCode} alt="RhenMark" />
+            <LazyLoadImage src={qrCode} effect="blur" alt="RhenMark" />
             <div>
               <span>Scan to check my CV</span>
             </div>
@@ -191,7 +194,7 @@ const Home: React.SFC<Props> = () => {
               {activeTab === "web" ? (
                 <Fragment>
                   <div className="Project-content-items-card">
-                    <img src={cartrack} alt="Cartrack Fleet Management" />
+                    <LazyLoadImage effect="blur" src={cartrack} alt="Cartrack Fleet Management" />
                     <div className="Project-content-items-card-title">
                       <span>Cartrack Fleet Management App </span>
                     </div>
@@ -203,7 +206,7 @@ const Home: React.SFC<Props> = () => {
                     </div>
                   </div>
                   <div className="Project-content-items-card isSoon">
-                    <img src={teacherNatty} alt="Teacher Natty" />
+                    <LazyLoadImage effect="blur" src={teacherNatty} alt="Teacher Natty" />
                     <div className="Project-content-items-card-title">
                       <span>Teacher Natty </span>
                     </div>
@@ -214,7 +217,7 @@ const Home: React.SFC<Props> = () => {
                     </div>
                   </div>
                   <div className="Project-content-items-card isSoon">
-                    <img src={gawangLokal} alt="Gawang Lokal" />
+                    <LazyLoadImage effect="blur" src={gawangLokal} alt="Gawang Lokal" />
                     <div className="Project-content-items-card-title">
                       <span>Gawang Lokal (E-commerce)</span>
                     </div>
@@ -249,7 +252,7 @@ const Home: React.SFC<Props> = () => {
               ) : (
                 <Fragment>
                   <div className="Project-content-items-card isMobile">
-                    <img src={gawangLokalApp} alt="Gawang Lokal App" />
+                    <LazyLoadImage effect="blur" src={gawangLokalApp} alt="Gawang Lokal App" />
                     <div className="Project-content-items-card-title">
                       <span>Gawang Lokal ( Mobile App )</span>
                     </div>
@@ -260,7 +263,7 @@ const Home: React.SFC<Props> = () => {
                     </div>
                   </div>
                   <div className="Project-content-items-card isMobile">
-                    <img src={chmscApp} alt="Chmsc App" />
+                    <LazyLoadImage effect="blur" src={chmscApp} alt="Chmsc App" />
                     <div className="Project-content-items-card-title">
                       <span>CHMSC APP</span>
                     </div>
@@ -328,6 +331,10 @@ const Home: React.SFC<Props> = () => {
             <span>How to Contact me?</span>
           </div>
           <div className="Contact-content">
+            <div className="Contact-content-form">
+                <ContactForm />
+            </div>
+            <div className="Contact-content-info">
             <ul>
               <li>
                 <Icon name="envelope" size="2x" color="#D44638" />
@@ -338,6 +345,8 @@ const Home: React.SFC<Props> = () => {
                 <span>rhenmark9</span>
               </li>
             </ul>
+            </div>
+            
           </div>
         </div>
       </Element>
