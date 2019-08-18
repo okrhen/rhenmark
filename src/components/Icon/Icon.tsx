@@ -1,10 +1,10 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   IconName,
   IconPrefix,
-  SizeProp
-} from "@fortawesome/fontawesome-svg-core";
+  SizeProp,
+} from '@fortawesome/fontawesome-svg-core';
 
 type IconProps = {
   name: string;
@@ -19,7 +19,7 @@ const Icon: React.SFC<IconProps> = ({
   prefix,
   size,
   className,
-  color
+  color,
 }) => (
   <FontAwesomeIcon
     icon={[prefix as IconPrefix, name as IconName]}
@@ -30,8 +30,8 @@ const Icon: React.SFC<IconProps> = ({
 );
 
 Icon.defaultProps = {
-  prefix: "fas",
-  size: "xs"
+  prefix: 'fas',
+  size: 'xs',
 };
 
 export default Icon;
