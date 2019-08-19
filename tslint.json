@@ -40,5 +40,10 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": ["src"]
+  "include": ["src"],
+  "rules": {
+    "jsx-no-multiline-js": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "jsx-boolean-value": [true, "never"]
+  }
 }

@@ -1,17 +1,17 @@
-import React, { useState, Fragment } from 'react';
-import { Link, Element } from 'react-scroll';
+import React, { Fragment, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Element, Link } from 'react-scroll';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import ContactForm from './components/Form';
 import Icon from '../../components/Icon';
+import ContactForm from './components/Form';
 
 import cartrack from '../../assets/images/cartrack.jpg';
-import teacherNatty from '../../assets/images/teacher-natty.png';
-import gawangLokal from '../../assets/images/gawanglokal.jpg';
-import gawangLokalApp from '../../assets/images/gawang-lokal-app.jpg';
 import chmscApp from '../../assets/images/chmsc-app.jpg';
+import gawangLokalApp from '../../assets/images/gawang-lokal-app.jpg';
+import gawangLokal from '../../assets/images/gawanglokal.jpg';
 import qrCode from '../../assets/images/resume.png';
+import teacherNatty from '../../assets/images/teacher-natty.png';
 
 // Resume short code
 // https://qrgo.page.link/Dv7AP
@@ -56,13 +56,18 @@ const navs = [
   { name: 'Contact', target: 'contact' },
 ];
 
-type Props = {
+interface IProps {
   path?: string;
   children?: any;
   default?: boolean;
-};
+}
 
-const Home: React.SFC<Props> = () => {
+interface INavsProps {
+  name: string;
+  target: string;
+}
+
+const Home: React.SFC<IProps> = () => {
   const [activeTab, setActiveTab] = useState('web');
   const [activeNav, setActiveNav] = useState('home');
   const [isNavOpen, setOpenNav] = useState(false);
@@ -72,20 +77,20 @@ const Home: React.SFC<Props> = () => {
     spy: true,
   };
 
+  const onClickNavPanel = () => setOpenNav(!isNavOpen);
+  const onClickNavItem = (item: string) => setActiveNav(item);
+
   return (
     <main className="Container">
       {isNavOpen && (
-        <div
-          className="Container-cover"
-          onClick={() => setOpenNav(!isNavOpen)}
-        />
+        <div className="Container-cover" onClick={onClickNavPanel} />
       )}
       <div className="Header">
         <div className="Header-logo">
           <button
             className="Header-logo-btn"
             title="nav-hamburger"
-            onClick={() => setOpenNav(true)}
+            onClick={onClickNavPanel}
           >
             <Icon name="bars" className="Header-logo-btn-icon" />
           </button>
@@ -93,12 +98,12 @@ const Home: React.SFC<Props> = () => {
         </div>
         <div className={`Header-nav ${isNavOpen ? 'isNavOpen' : ''}`}>
           <div className="Header-nav-close">
-            <button title="nav-close" onClick={() => setOpenNav(!isNavOpen)}>
+            <button title="nav-close" onClick={onClickNavPanel}>
               <Icon name="times" />
             </button>
           </div>
           <ul>
-            {navs.map(item => (
+            {navs.map((item: INavsProps) => (
               <li
                 className={activeNav === item.target ? 'isActive' : ''}
                 key={item.target}
@@ -106,7 +111,8 @@ const Home: React.SFC<Props> = () => {
                 <Link
                   to={item.target}
                   {...linkConfig}
-                  onSetActive={() => setActiveNav(item.target)}
+                  id={item.target}
+                  onSetActive={onClickNavItem}
                 >
                   {item.name}
                 </Link>
@@ -118,7 +124,9 @@ const Home: React.SFC<Props> = () => {
       <Element name="home">
         <div className="Home" id="home">
           <div className="Home-left">
-            <LazyLoadImage src={qrCode} effect="blur" alt="RhenMark" />
+            <div className="Home-left-qrcode">
+              <LazyLoadImage src={qrCode} effect="blur" alt="RhenMark" />
+            </div>
             <div>
               <span>Scan to check my CV</span>
             </div>

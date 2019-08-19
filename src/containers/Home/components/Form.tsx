@@ -1,28 +1,30 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState } from 'react';
 import {
   firebaseDB,
-  firebaseDbTimeStamp
-} from "../../../config/firebase-config";
+  firebaseDbTimeStamp,
+} from '../../../config/firebase-config';
 
 const initialState = {
-  name: "",
-  email: "",
-  message: ""
+  email: '',
+  message: '',
+  name: '',
 };
 
 const ContactForm = () => {
   const [userInput, setUserInput] = useState(initialState);
-  const isContacted = Boolean(localStorage.getItem("contacted") === "true");
+  const isContacted = Boolean(localStorage.getItem('contacted') === 'true');
   const onSubmit = (e: FormEvent) => {
-    if (e) e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
 
     if (!isContacted) {
-      const identity = userInput.name.replace(/ /g, "");
+      const identity = userInput.name.replace(/ /g, '');
       firebaseDB
         .ref()
         .child(`visitors/${identity}`)
         .set({ ...userInput, createdAt: firebaseDbTimeStamp }, res => {
-          localStorage.setItem("contacted", "true");
+          localStorage.setItem('contacted', 'true');
           setUserInput(initialState);
         });
     }
@@ -34,12 +36,12 @@ const ContactForm = () => {
     event.persist();
     setUserInput({
       ...userInput,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
   return (
-    <form className="Form" onSubmit={e => onSubmit(e)}>
+    <form className="Form" onSubmit={onSubmit}>
       <div className="Form-group">
         <input
           type="text"
@@ -75,7 +77,7 @@ const ContactForm = () => {
       </div>
       <div className="Form-group">
         <button className="Form-group-btn" type="submit" disabled={isContacted}>
-          {isContacted ? "Thank you for contacting" : "Send"}
+          {isContacted ? 'Thank you for contacting' : 'Send'}
         </button>
       </div>
     </form>
