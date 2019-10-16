@@ -1,11 +1,13 @@
-@import "../containers/Home/styles/home.style.scss";
-@import "../containers/Home/styles/form.component.scss";
+@import '../containers/Home/styles/home.style.scss';
+@import '../containers/Home/styles/form.component.scss';
+@import '../containers/Overview/overview.style.scss';
+@import '../containers/Pages/pages.style.scss';
 
 html,
 body {
   margin: 0;
-  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;

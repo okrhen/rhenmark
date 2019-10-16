@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type Props = {
   path?: string;
@@ -6,7 +6,11 @@ type Props = {
 };
 
 const Landing: React.SFC<Props> = () => {
-  return (<div></div>);
+  return (
+    <div>
+      <p>This is page</p>
+    </div>
+  );
 };
 
 export default Landing;

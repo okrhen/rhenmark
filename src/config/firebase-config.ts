@@ -1,5 +1,6 @@
 import * as firebase from 'firebase/app';
 import 'firebase/database';
+import { format } from 'date-fns';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -15,7 +16,9 @@ const firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseDB = firebaseApp.database();
 const firebaseDbTimeStamp = firebase.database.ServerValue.TIMESTAMP;
+const today = format(new Date(), 'dd-MM-yyyy');
+const userDb = firebaseDB.ref(`members/${today}`);
 
-export { firebaseDB, firebaseDbTimeStamp };
+export { firebaseDB, firebaseDbTimeStamp, userDb };
 
 export default firebaseApp;
