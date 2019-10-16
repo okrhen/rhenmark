@@ -25,7 +25,22 @@ const ActiveQueOverview = ({ step }: { step: number }) => {
         let item = undefined;
 
         if (value) {
-          notifAudio.play();
+        }
+
+        if (
+          navigator.userAgent.match(/Android/i) ||
+          navigator.userAgent.match(/webOS/i) ||
+          navigator.userAgent.match(/iPhone/i) ||
+          navigator.userAgent.match(/iPad/i) ||
+          navigator.userAgent.match(/iPod/i) ||
+          navigator.userAgent.match(/BlackBerry/i) ||
+          navigator.userAgent.match(/Windows Phone/i)
+        ) {
+          console.log('Hey, you are here in console logs. Cheers!!');
+        } else {
+          if (value) {
+            notifAudio.play();
+          }
         }
 
         if (isArray) {
