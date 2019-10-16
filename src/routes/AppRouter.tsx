@@ -10,7 +10,7 @@ const AppRouter: React.SFC = () => (
     <SharedRouter path="/">
       <Home path="/home" default />
       <LandingPage path="/que" />
-      <Pages path="/steps/:number" />
+      <Pages path="/step/:number" />
       <Overview path="/overview" default />
     </SharedRouter>
   </Router>
