@@ -250,6 +250,7 @@
         display: block;
         padding: 10px 0;
         font-size: 18px;
+        text-align: center;
       }
     }
 
@@ -263,6 +264,23 @@
       text-transform: uppercase;
       box-sizing: border-box;
       text-align: center;
+    }
+
+    button {
+      font-size: 32px;
+      padding: 10px 30px;
+      margin-top: 50px;
+      border-radius: 3px;
+      background-color: #802e1b;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        background-color: #c53e1f;
+      }
     }
 
     &-card {
@@ -290,6 +308,12 @@
 
       span {
         font-size: 24px;
+        text-align: center;
+
+        > span {
+          font-size: 16px;
+          color: #00eeee;
+        }
       }
 
       &-number {

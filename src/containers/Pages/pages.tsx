@@ -405,7 +405,14 @@ const StepThree = () => {
             </div>
           ) : (
             <div className="Pages-three-active">
-              <span>NO ITEMS YET</span>
+              <span>
+                NO MEMBERS IN THE WAITING LIST
+                <br />
+                <span>
+                  Note: if you want to change your table number, please reload
+                  the page. Make sure the table number is not in use.
+                </span>
+              </span>
             </div>
           )}
         </div>
