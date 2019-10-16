@@ -187,20 +187,27 @@ const NextQue = ({ step }: { step: number }) => {
   return items ? (
     <div className="Overview-card-next">
       <span className="Overview-card-next-line">NEXT IN LINE:</span>
-      {(items || [])
-        .filter((item: any) =>
-          step === 3 || step === 4 ? !item.isServing : item
-        )
-        .map((value: any, key: number) => {
-          return (
-            <div className="Overview-card-next-number" key={`${key}`}>
-              <span className="Overview-card-next-number-que">
-                {(value || { id: '' }).id || ''}
-              </span>
-              {/* <span>{(value || { name: '' }).name || ''}</span> */}
-            </div>
-          );
-        })}
+      <div className="Overview-card-next-view">
+        {(items || [])
+          .filter((item: any) =>
+            step === 3 || step === 4 ? !item.isServing : item
+          )
+          .map((value: any, key: number) => {
+            return (
+              <div
+                className={`Overview-card-next-number ${
+                  step === 3 ? 'isVertical' : ''
+                }`}
+                key={`${key}`}
+              >
+                <span className="Overview-card-next-number-que">
+                  {(value || { id: '' }).id || ''}
+                </span>
+                {/* <span>{(value || { name: '' }).name || ''}</span> */}
+              </div>
+            );
+          })}
+      </div>
     </div>
   ) : (
     <div />

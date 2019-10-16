@@ -19,16 +19,17 @@
   &-multiView {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
     align-items: flex-start;
     position: relative;
+    justify-content: flex-start;
 
     &-content {
       display: flex;
-      width: 30%;
+      width: calc(100% / 3);
       flex-direction: column;
       align-items: center;
+      margin-top: 35px;
 
       &.isLast {
         width: 100% !important;
@@ -65,6 +66,7 @@
       padding-top: 80px;
       flex-direction: column;
       width: 100%;
+      // overflow-y: auto;
 
       &-content {
         display: flex;
@@ -118,11 +120,22 @@
         font-size: 18px;
       }
 
+      &-view {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
       &-number {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+
+        &.isVertical {
+          flex-direction: column;
+        }
 
         span {
           font-size: 24px;
