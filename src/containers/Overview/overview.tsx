@@ -17,7 +17,7 @@ const ActiveQueOverview = ({ step }: { step: number }) => {
     const orderQuery = usersRef.orderByChild('step');
     //
     orderQuery
-      .limitToFirst(step === 3 || step === 4 ? 1000 : 1)
+      .limitToFirst(step === 3 ? 1000 : 1)
       .equalTo(Number(step))
       .on('value', snapshot => {
         const value = snapshot.val();
@@ -189,9 +189,7 @@ const NextQue = ({ step }: { step: number }) => {
       <span className="Overview-card-next-line">NEXT IN LINE:</span>
       <div className="Overview-card-next-view">
         {(items || [])
-          .filter((item: any) =>
-            step === 3 || step === 4 ? !item.isServing : item
-          )
+          .filter((item: any) => (step === 3 ? !item.isServing : item))
           .map((value: any, key: number) => {
             return (
               <div
