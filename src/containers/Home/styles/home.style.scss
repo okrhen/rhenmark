@@ -147,40 +147,37 @@
     box-sizing: border-box;
     box-sizing: border-box;
     background: rgb(27, 103, 196);
-    background: -moz-linear-gradient(
-      90deg,
-      rgba(27, 103, 196, 1) 0%,
-      rgba(9, 213, 192, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      90deg,
-      rgba(27, 103, 196, 1) 0%,
-      rgba(9, 213, 192, 1) 100%
-    );
-    background: linear-gradient(
-      90deg,
-      rgba(27, 103, 196, 1) 0%,
-      rgba(9, 213, 192, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b67c4",endColorstr="#09d5c0",GradientType=1);
+    background-image: url(https://images.unsplash.com/photo-1546614409-810f10108b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=2982&q=80);
+    background-position: center;
+    background-size: cover;
 
     @media screen and (max-width: 600px) {
       grid-template-columns: 100%;
       min-height: auto;
-      grid-template-rows: calc(100vh - 250px) 50vh;
+      grid-template-rows: calc(100vh - 375px);
+
+      &-left {
+        &-qrcode {
+          background-color: transparent !important;
+        }
+      }
     }
 
     &-left {
       box-sizing: border-box;
-      display: grid;
+      display: flex;
       align-items: center;
       justify-content: center;
-      grid-template-rows: 80% 20%;
+      grid-template-rows: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
       &-qrcode {
         color: transparent;
-        background: #fff;
-        height: 90%;
+        background-color: #fff;
+        height: 50%;
+        width: 300px;
         border-radius: 10px;
         justify-content: center;
         display: flex;
@@ -208,7 +205,7 @@
 
         > div {
           padding: 0 10px;
-          font-size: 24px;
+          font-size: 16px;
         }
       }
     }
@@ -218,6 +215,9 @@
       align-items: center;
       padding: 50px;
       grid-template-rows: 50% 50%;
+      @media screen and (max-width: 600px) {
+        grid-template-rows: 80% 20%;
+      }
 
       &-info {
         display: grid;
@@ -234,6 +234,9 @@
             color: #ffbf21;
             font-weight: bold;
             letter-spacing: 1px;
+            @media screen and (max-width: 600px) {
+              font-size: 50px;
+            }
           }
 
           span:last-child {
@@ -248,6 +251,9 @@
         display: grid;
         align-items: flex-start;
         height: 100%;
+        @media screen and (max-width: 600px) {
+          height: auto;
+        }
 
         > ul {
           list-style-type: none;
