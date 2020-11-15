@@ -22,7 +22,7 @@ const fetcher = (url: string) => fetch(url).then(r => r.json());
 
 const Profile = () => {
   const currentJob = profile.iJobExperiences[0];
-  const { data } = useSWR('http://zenquotes.io/api/random', fetcher, {
+  const { data } = useSWR('https://zenquotes.io/api/random', fetcher, {
     refreshInterval: 180000,
   });
 
