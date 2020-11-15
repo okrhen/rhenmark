@@ -1,6 +1,6 @@
 // tslint:disable: no-implicit-dependencies
 // tslint:disable no-submodule-imports
-import 'components/icon/config/icon-init';
+import './components/icon/config/icon-init';
 
 import { Router } from '@reach/router';
 import Blog from 'pages/blog';
