@@ -1,20 +1,20 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   IconName,
   IconPrefix,
   SizeProp,
 } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 
-type IconProps = {
+interface IIconProps {
   name: string;
   prefix?: string; // fas | fab
   size?: string | undefined;
   className?: string | undefined;
   color?: string | undefined;
-};
+}
 
-const Icon: React.SFC<IconProps> = ({
+const Icon: React.FC<IIconProps> = ({
   name,
   prefix,
   size,

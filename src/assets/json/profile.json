@@ -1,0 +1,96 @@
+{
+  "iName": "Rhen Mark Callado",
+  "iAbout": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "iJobExperiences": [
+    {
+      "position": "Application Developer",
+      "company": "Aon Centre for Innovation and Analytics (ACIA)",
+      "location": "Singapore",
+      "from": "April 2020",
+      "to": "Present",
+      "technologies": ["React", "TypeScript", ".Net", "Microsoft SQL Server"]
+    },
+    {
+      "position": "Web Developer",
+      "company": "Cartrack Asia Pacific",
+      "location": "Singapore",
+      "from": "August 2018",
+      "to": "April 2020",
+      "technologies": [
+        "React",
+        "Redux",
+        "Redux-Saga",
+        "Styled-Components",
+        "TypeScript",
+        "Recharts",
+        "Google Maps API",
+        "OpenStreetMap",
+        "PHP"
+      ]
+    },
+    {
+      "position": "Web Developer Supervisor",
+      "company": "The Asia Thai Co. Ltd",
+      "location": "Bangkok, Thailand",
+      "from": "January 2018",
+      "to": "August 2018",
+      "technologies": [
+        "React",
+        "React Apollo",
+        "GraphQL",
+        "NodeJS",
+        "LoopBack",
+        "Stripe"
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "Stratium Software Group Inc",
+      "location": "Bacolod, Philippines",
+      "from": "January 2016",
+      "to": "January 2018",
+      "technologies": [
+        "React",
+        "React Native",
+        "NodeJS",
+        "FeathersJS",
+        "Firebase",
+        "Phonegap",
+        "Cordova",
+        "PHP",
+        "MySQL",
+        "Twilio"
+      ]
+    }
+  ],
+  "iSchool": {
+    "name": "Carlos Hilado Memorial State College - Main Campus",
+    "degree": "Bachelor of Science",
+    "field": "Information Sytems",
+    "from": "June 2012",
+    "to": "March 2016",
+    "award": "Dean's List ( 3x )"
+  },
+  "iLinks": [
+    {
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/in/rhenmarkcallado/"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/okrhen"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/rhencallado"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/rhen.mark/"
+    },
+    {
+      "name": "Skype",
+      "url": "https://join.skype.com/invite/iEq9LiFJewHD"
+    }
+  ]
+}

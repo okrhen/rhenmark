@@ -1,29 +1,33 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faMap } from '@fortawesome/free-solid-svg-icons/faMap';
-import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
-import { faUserTie } from '@fortawesome/free-solid-svg-icons/faUserTie';
-import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
-import { faLocationArrow } from '@fortawesome/free-solid-svg-icons/faLocationArrow';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons/faInfoCircle';
-import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
-import { faSlidersH } from '@fortawesome/free-solid-svg-icons/faSlidersH';
-import { faHeartBroken } from '@fortawesome/free-solid-svg-icons/faHeartBroken';
-import { faListAlt } from '@fortawesome/free-solid-svg-icons/faListAlt';
-import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons/faTachometerAlt';
-import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine';
-import { faTasks } from '@fortawesome/free-solid-svg-icons/faTasks';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { faGooglePlus } from '@fortawesome/free-brands-svg-icons/faGooglePlus';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { faSkype } from '@fortawesome/free-brands-svg-icons/faSkype';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
+import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
+import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
+import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
+import { faHeartBroken } from '@fortawesome/free-solid-svg-icons/faHeartBroken';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons/faInfoCircle';
+import { faListAlt } from '@fortawesome/free-solid-svg-icons/faListAlt';
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons/faLocationArrow';
+import { faMap } from '@fortawesome/free-solid-svg-icons/faMap';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
+import { faSlidersH } from '@fortawesome/free-solid-svg-icons/faSlidersH';
+import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
+import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons/faTachometerAlt';
+import { faTasks } from '@fortawesome/free-solid-svg-icons/faTasks';
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
+import { faUserTie } from '@fortawesome/free-solid-svg-icons/faUserTie';
+import { faThLarge } from '@fortawesome/free-solid-svg-icons/faThLarge';
+import { faTh } from '@fortawesome/free-solid-svg-icons/faTh';
+import { faComment } from '@fortawesome/free-solid-svg-icons/faComment';
+import { faGlobeAsia } from '@fortawesome/free-solid-svg-icons/faGlobeAsia';
 
 library.add(
   fab,
@@ -50,5 +54,9 @@ library.add(
   faInstagram,
   faEnvelope,
   faSkype,
-  faBars
+  faBars,
+  faThLarge,
+  faTh,
+  faComment,
+  faGlobeAsia
 );
