@@ -1,10 +1,13 @@
+// tslint:disable: no-implicit-dependencies
+// tslint:disable no-submodule-imports
 import 'components/icon/config/icon-init';
+
+import { Router } from '@reach/router';
+import Blog from 'pages/blog';
 import Home from 'pages/home';
+import Project from 'pages/project';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { Router, Link } from '@reach/router';
-import Blog from 'pages/blog';
-import Project from 'pages/project';
 
 const GlobalStyle = createGlobalStyle`
   html {

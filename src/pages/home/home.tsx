@@ -112,7 +112,7 @@ const SocialLinks = () => {
       <ul>
         {profile.iLinks.map(link => (
           <li key={link.name}>
-            <a href={link.url} target="_blank">
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
               <Icon
                 name={link.name.toLocaleLowerCase()}
                 prefix="fab"

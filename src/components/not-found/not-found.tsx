@@ -75,7 +75,10 @@ const NotFound = () => {
           </Link>
         </div>
       </div>
-      <img src="https://media.giphy.com/media/5xtDarA6JDYNFmWQvLy/giphy.gif" />
+      <img
+        src="https://media.giphy.com/media/5xtDarA6JDYNFmWQvLy/giphy.gif"
+        alt="maintenance"
+      />
     </StyledNotFound>
   );
 };
