@@ -1,7 +1,1 @@
 /// <reference types="react-scripts" />
-declare module "react-lazy-load-image-component";
-
-declare module "*.png" {
-    const content: any;
-    export default content;
-  }

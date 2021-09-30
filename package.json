@@ -16,9 +16,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-is": "^16.13.1",
-    "react-lazy-load-image-component": "^1.5.0",
     "react-scripts": "^4.0.3",
-    "react-scroll": "^1.8.1",
     "typescript": "^3.9.7"
   },
   "scripts": {
