@@ -25,7 +25,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "serve": "firebase serve --only hosting",
-    "deploy": "firebase serve --only hosting"
+    "deploy": "firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
