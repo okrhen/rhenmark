@@ -24,7 +24,8 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "heroku-update": "git push heroku master"
+    "serve": "firebase serve --only hosting",
+    "deploy": "firebase serve --only hosting"
   },
   "eslintConfig": {
     "extends": "react-app"
