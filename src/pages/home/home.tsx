@@ -1,149 +1,60 @@
-import Container from 'components/container';
-import Header from 'components/header';
-import React from 'react';
-import useSWR from 'swr';
-import profile from 'assets/json/profile.json';
-import { IPath } from 'interfaces/shared';
-import Icon from 'components/icon';
-import {
-  StyledProfile,
-  StyledH4,
-  StyledAbout,
-  StyledExperience,
-  StyledBadge,
-  StyledEducation,
-  StyledSocialLinks,
-  StyledMain,
-  StyledLeftContent,
-  StyledRightContent,
-} from './styles';
+import { RouteComponentProps } from '@reach/router'
+import * as React from 'react'
 
-const fetcher = (url: string) => fetch(url).then(r => r.json());
+import linkedin from 'assets/images/linkedin.svg'
+import github from 'assets/images/github.svg'
+import resume from 'assets/images/resume.svg'
 
-const Profile = () => {
-  const currentJob = profile.iJobExperiences[0];
-  const { data } = useSWR('https://zenquotes.io/api/random', fetcher, {
-    refreshInterval: 180000,
-  });
 
+export default function Home(path: RouteComponentProps): JSX.Element {
   return (
-    <StyledProfile>
-      <div className="banner">
-        {data ? <span dangerouslySetInnerHTML={{ __html: data[0].h }} /> : ''}
-      </div>
-      <div className="profile">
-        <div className="profile-image" />
-        <div className="profile-info">
-          <StyledH4>{profile.iName}</StyledH4>
-          <span>
-            {currentJob.position} at {currentJob.company}
-          </span>
-          <span>{currentJob.location}</span>
-          <div className="profile-info-contacts">
-            <button>Contact Info</button>
-          </div>
+    <div className="container mx-auto">
+      <div className="flex flex-col h-screen justify-center items-center gap-4">
+        <span className="text-8xl lg:text-9xl font-bold text-gray-800">RHEN</span>
+        <span className="text-2xl"> {'<'} Frontend Developer  {'/>'}</span>
+        <div className="flex flex-row gap-8">
+          <Assets />
         </div>
       </div>
-    </StyledProfile>
-  );
-};
-
-const About = () => (
-  <StyledAbout>
-    <p>About</p>
-    <span>{profile.iAbout}</span>
-  </StyledAbout>
-);
-
-const Experience = () => (
-  <StyledExperience>
-    <p>Experience</p>
-    <div className="experiences">
-      <ul className="experiences-list">
-        {profile.iJobExperiences.map(item => {
-          return (
-            <li key={item.company} className="experiences-list-item">
-              <div></div>
-              <div className="experiences-list-item-info">
-                <span className="position">{item.position}</span>
-                <span>{item.company}</span>
-                <span className="text-light-gray">
-                  {item.from} - {item.to}
-                </span>
-                <span className="text-light-gray">{item.location}</span>
-                <div className="technologies">
-                  {item.technologies.map(tech => (
-                    <StyledBadge key={tech}>{tech}</StyledBadge>
-                  ))}
-                </div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
     </div>
-  </StyledExperience>
-);
+  )
+}
 
-const Education = () => (
-  <StyledEducation>
-    <p>Education</p>
-    <ul>
-      <li>
-        <span>{profile.iSchool.name}</span>
-        <span>
-          {profile.iSchool.degree} - {profile.iSchool.field}
-        </span>
-        <span>
-          {profile.iSchool.from} - {profile.iSchool.to}
-        </span>
-        <div className="awards">
-          <span>Award - {profile.iSchool.award}</span>
-        </div>
-      </li>
-    </ul>
-  </StyledEducation>
-);
 
-const SocialLinks = () => {
+interface InfoLinks {
+  url: string;
+  icon: string
+}
+type InfoProps = "linkedin" | "github" | "resume";
+
+const Info: Record<InfoProps, InfoLinks> = {
+  linkedin: {
+    url: 'https://www.linkedin.com/in/rhenmarkcallado/',
+    icon: linkedin
+  },
+  github: {
+    url: 'https://github.com/okrhen',
+    icon: github
+  },
+  resume: {
+    url: 'https://drive.google.com/file/d/1cYw3FJa_dPlbK9_FsS2LMYDdhtmzGot-/view?usp=sharing',
+    icon: resume
+  },
+}
+
+function Assets(): JSX.Element {
   return (
-    <StyledSocialLinks>
-      <p>Social Media Links</p>
-      <ul>
-        {profile.iLinks.map(link => (
-          <li key={link.name}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              <Icon
-                name={link.name.toLocaleLowerCase()}
-                prefix="fab"
-                size="2x"
-              />
-              <span>{link.name}</span>
+    <>
+      {
+        (Object.keys(Info) as Array<keyof typeof Info>).map((item: InfoProps) => {
+          const detail = Info[item]
+          return (
+            <a href={detail.url} rel="noopener noreferrer" target="_blank">
+              <img src={detail.icon} alt={item} className="h-12" />
             </a>
-          </li>
-        ))}
-      </ul>
-    </StyledSocialLinks>
-  );
-};
-
-const Home = ({ path, default: boolean }: IPath) => {
-  return (
-    <Container>
-      <Header />
-      <StyledMain>
-        <StyledLeftContent>
-          <Profile />
-          <About />
-          <Experience />
-          <Education />
-        </StyledLeftContent>
-        <StyledRightContent>
-          <SocialLinks />
-        </StyledRightContent>
-      </StyledMain>
-    </Container>
-  );
-};
-
-export default Home;
+          )
+        })
+      }
+    </>
+  )
+}
