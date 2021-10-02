@@ -11,7 +11,7 @@ export default function Home(path: RouteComponentProps): JSX.Element {
     <div className="container mx-auto">
       <div className="flex flex-col h-screen justify-center items-center gap-4">
         <span className="text-8xl lg:text-9xl font-bold text-gray-800">RHEN</span>
-        <span className="text-2xl"> {'<'} Frontend Developer  {'/>'}</span>
+        <span className="text-2xl"> {'<'} Frontend Engineer  {'/>'}</span>
         <div className="flex flex-row gap-8">
           <Assets />
         </div>
